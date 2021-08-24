@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       // darkTheme: AppTheme.dartTheme,
       debugShowCheckedModeBanner: false,
       // replace init route here
-      initialRoute: AppRouter.signUp,
+      initialRoute: AppRouter.reminders,
       onGenerateRoute: AppRouter.onGenerateRoute,
     );
   }

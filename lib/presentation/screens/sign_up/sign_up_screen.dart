@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:meditation_app/presentation/screens/sign_up/widgets/custom_button.dart';
+import 'package:meditation_app/presentation/screens/shared/widgets/custom_button.dart';
 import 'package:meditation_app/presentation/screens/sign_up/widgets/text_field_container.dart';
 
 class SignUpScreen extends StatefulWidget {
