@@ -118,7 +118,7 @@ class _RemindersScreenState extends State<RemindersScreen> {
                 SizedBox(height: 25.0),
                 CustomButton(
                   title: 'SAVE',
-                  color: Color(0xFF8E97FD),
+                  color: kPrimaryColor,
                   function: () {},
                   textColor: Color(0xFFF6F1FB),
                 ),
