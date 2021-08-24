@@ -9,20 +9,20 @@ class CustomCard extends StatelessWidget {
 // need better flexible solution
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // width: 177.0,
-      // height: customCardItem.height,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(customCardItem.imgPath),
-          fit: BoxFit.contain,
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(customCardItem.imgPath),
+            // fit: BoxFit.contain,
+            alignment: Alignment.topCenter,
+          ),
+          borderRadius: BorderRadius.circular(10.0),
         ),
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: Align(
-        alignment: Alignment.bottomCenter,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 30.0),
+        child: Container(
+          alignment: Alignment.bottomCenter,
+          margin: EdgeInsets.only(bottom: 15.0),
           child: Text(
             customCardItem.label,
             style: TextStyle(

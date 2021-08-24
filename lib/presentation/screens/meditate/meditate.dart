@@ -39,23 +39,19 @@ class _MeditateScreenState extends State<MeditateScreen> {
 
   final List<CustomCardItem> cards = [
     CustomCardItem(
-      height: 210.0,
       imgPath: "assets/images/category_bg_1.png",
       label: '7 Days of Calm',
     ),
     CustomCardItem(
-        height: 160.0,
-        imgPath: "assets/images/category_bg_2.png",
-        label: 'Anxies Release',
-        isSmall: true),
+      imgPath: "assets/images/category_bg_2.png",
+      label: 'Anxies Release',
+    ),
     CustomCardItem(
-      height: 160.0,
-      imgPath: "assets/images/category_bg_3.png",
+      imgPath: "assets/images/category_bg_4.png",
       label: '',
     ),
     CustomCardItem(
-      height: 210.0,
-      imgPath: "assets/images/category_bg_4.png",
+      imgPath: "assets/images/category_bg_3.png",
       label: '',
     ),
   ];
@@ -74,6 +70,21 @@ class _MeditateScreenState extends State<MeditateScreen> {
     } else {
       return Container(color: kPrimaryColor);
     }
+  }
+
+  List<StaggeredTile> _builderSize() {
+    List<StaggeredTile> items = [];
+    bool flag = true;
+    for (int i = 0; i < cards.length; i++) {
+      if (flag) {
+        items.add(StaggeredTile.extent(1, 210));
+        flag = false;
+      } else {
+        items.add(StaggeredTile.extent(1, 167));
+        flag = true;
+      }
+    }
+    return items;
   }
 
   @override
@@ -151,16 +162,16 @@ class _MeditateScreenState extends State<MeditateScreen> {
           // daily
           Daily(),
           SizedBox(height: 15.0),
-          GridView.count(
+          StaggeredGridView.count(
             shrinkWrap: true,
-            mainAxisSpacing: 20,
-            crossAxisSpacing: 20,
+            mainAxisSpacing: 16,
+            crossAxisSpacing: 8,
             crossAxisCount: 2,
-            childAspectRatio: 0.83,
             children: List.generate(
               cards.length,
               (index) => CustomCard(customCardItem: cards[index]),
             ),
+            staggeredTiles: _builderSize(),
           ),
         ],
       ),
