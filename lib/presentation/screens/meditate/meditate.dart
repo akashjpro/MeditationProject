@@ -67,6 +67,8 @@ class _MeditateScreenState extends State<MeditateScreen> {
   route() {
     if (_selectedIndex == 2) {
       return _buildExampleMeditateRoute();
+    } else if (_selectedIndex == 1) {
+      return Container();
     } else {
       return Container(color: kPrimaryColor);
     }
@@ -74,15 +76,8 @@ class _MeditateScreenState extends State<MeditateScreen> {
 
   List<StaggeredTile> _builderSize() {
     List<StaggeredTile> items = [];
-    bool flag = true;
     for (int i = 0; i < cards.length; i++) {
-      if (flag) {
-        items.add(StaggeredTile.extent(1, 210));
-        flag = false;
-      } else {
-        items.add(StaggeredTile.extent(1, 167));
-        flag = true;
-      }
+      items.add(StaggeredTile.extent(1, i % 2 == 0 ? 210 : 167));
     }
     return items;
   }
@@ -91,6 +86,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
+      backgroundColor: _selectedIndex != 1 ? Colors.white : Color(0xFF03174D),
       body: SingleChildScrollView(
         child: SafeArea(
           child: route(),
@@ -102,6 +98,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
 
   _buildBottomNavigationBar() {
     return BottomNavigationBar(
+      backgroundColor: _selectedIndex != 1 ? Colors.white : Color(0xFF03174D),
       items: _bottomNavigationBarItem,
       selectedItemColor: kPrimaryColor,
       iconSize: 21.0,
