@@ -9,9 +9,9 @@ import 'package:meditation_app/presentation/screens/sign_up/sign_up_screen.dart'
 class AppRouter {
   // static const String home = '/';
   // replace '/signup' here when have default route such as home.
-  static const String signUp = '/signup';
+  static const String signUp = '/';
   static const String reminders = '/reminders';
-  static const String meditation = '/';
+  static const String meditation = '/meditate';
 
   const AppRouter._();
 

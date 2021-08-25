@@ -6,10 +6,22 @@ import 'package:meditation_app/presentation/screens/meditate/models/category_ite
 
 class CategoryContainer extends StatelessWidget {
   final CategoryItem categoryItem;
+  final bool isSleepScreen;
   const CategoryContainer({
     Key? key,
     required this.categoryItem,
+    required this.isSleepScreen,
   }) : super(key: key);
+
+  Color _checkColor() {
+    if (categoryItem.isActive! && isSleepScreen) {
+      return Colors.white;
+    } else if (categoryItem.isActive! && !isSleepScreen) {
+      return Color(0xFF3F414E);
+    } else {
+      return Color(0xFFA0A3B1);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,13 +43,10 @@ class CategoryContainer extends StatelessWidget {
           Text(
             categoryItem.label,
             style: TextStyle(
-              fontSize: 14.0,
-              fontFamily: fontFamily,
-              fontWeight: FontWeight.w400,
-              color: categoryItem.isActive!
-                  ? Color(0xFF3F414E)
-                  : Color(0xFFA0A3B1),
-            ),
+                fontSize: 14.0,
+                fontFamily: fontFamily,
+                fontWeight: FontWeight.w400,
+                color: _checkColor()),
           ),
         ],
       ),

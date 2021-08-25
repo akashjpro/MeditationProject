@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:meditation_app/core/constants/constants.dart';
 import 'package:meditation_app/presentation/screens/meditate/models/custom_card_item.dart';
 

@@ -96,7 +96,7 @@ class _RemindersScreenState extends State<RemindersScreen> {
                   isRadio: false,
                   spacing: 14,
                   direction: Axis.horizontal,
-                  buttons: ['SU', 'M', 'T', 'W', 'TH', 'F', 'S'],
+                  buttons: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
                   onSelected: (index, isSelected) =>
                       print('$index button is selected'),
                   selectedColor: Color(0xFF3F414E),
@@ -113,13 +113,14 @@ class _RemindersScreenState extends State<RemindersScreen> {
                   unselectedTextStyle: TextStyle(
                     color: Color(0xFFA1A4B2),
                   ),
-                  groupRunAlignment: GroupRunAlignment.spaceAround,
                 ),
                 SizedBox(height: 25.0),
                 CustomButton(
                   title: 'SAVE',
                   color: kPrimaryColor,
-                  function: () {},
+                  function: () {
+                    Navigator.popAndPushNamed(context, '/meditate');
+                  },
                   textColor: Color(0xFFF6F1FB),
                 ),
                 SizedBox(height: 20.0),

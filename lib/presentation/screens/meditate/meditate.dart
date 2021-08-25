@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:meditation_app/core/constants/constants.dart';
 import 'package:meditation_app/core/themes/theme.dart';
-import 'package:meditation_app/presentation/screens/meditate/models/category_item.dart';
 import 'package:meditation_app/presentation/screens/meditate/models/custom_card_item.dart';
-import 'package:meditation_app/presentation/screens/meditate/widgets/category_container.dart';
 import 'package:meditation_app/presentation/screens/meditate/widgets/custom_card.dart';
+import 'package:meditation_app/presentation/screens/shared/widgets/categories_item.dart';
+import 'package:meditation_app/presentation/screens/sleep/sleep.dart';
 
 import 'widgets/daily.dart';
 
@@ -26,15 +26,6 @@ class _MeditateScreenState extends State<MeditateScreen> {
         iconPath: 'assets/icons/meditate.svg', label: 'Meditate'),
     customNavigationBarItem(iconPath: 'assets/icons/music.svg', label: 'Music'),
     customNavigationBarItem(iconPath: 'assets/icons/user.svg', label: 'Afsar'),
-  ];
-  // use state management to handle isActive later
-  final List<CategoryItem> categories = [
-    CategoryItem(
-        iconPath: 'assets/icons/all.svg', label: 'Home', isActive: true),
-    CategoryItem(iconPath: 'assets/icons/my.svg', label: 'My'),
-    CategoryItem(iconPath: 'assets/icons/anxious.svg', label: 'Anxious'),
-    CategoryItem(iconPath: 'assets/icons/sleep.svg', label: 'Sleep'),
-    CategoryItem(iconPath: 'assets/icons/kids.svg', label: 'Kids'),
   ];
 
   final List<CustomCardItem> cards = [
@@ -68,7 +59,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
     if (_selectedIndex == 2) {
       return _buildExampleMeditateRoute();
     } else if (_selectedIndex == 1) {
-      return Container();
+      return SleepScreen();
     } else {
       return Container(color: kPrimaryColor);
     }
@@ -85,12 +76,11 @@ class _MeditateScreenState extends State<MeditateScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       extendBody: true,
       backgroundColor: _selectedIndex != 1 ? Colors.white : Color(0xFF03174D),
       body: SingleChildScrollView(
-        child: SafeArea(
-          child: route(),
-        ),
+        child: route(),
       ),
       bottomNavigationBar: _buildBottomNavigationBar(),
     );
@@ -98,6 +88,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
 
   _buildBottomNavigationBar() {
     return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
       backgroundColor: _selectedIndex != 1 ? Colors.white : Color(0xFF03174D),
       items: _bottomNavigationBarItem,
       selectedItemColor: kPrimaryColor,
@@ -111,66 +102,55 @@ class _MeditateScreenState extends State<MeditateScreen> {
   }
 
   _buildExampleMeditateRoute() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 30.0, horizontal: 20.0),
-      child: Column(
-        children: [
-          Align(
-            alignment: Alignment.center,
-            child: Text(
-              'Meditate',
-              style: TextStyle(
-                fontFamily: fontFamily,
-                fontSize: 28.0,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-          ),
-          SizedBox(height: 15.0),
-          Container(
-            constraints: BoxConstraints(maxWidth: 350.0),
-            child: Text(
-              'we can learn how to recognize when our minds are doing their normal everyday acrobatics.',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: fontFamily,
-                fontSize: 16.0,
-                fontWeight: FontWeight.w300,
-                color: Color(0xFFA1A4B2),
-              ),
-            ),
-          ),
-          SizedBox(height: 30.0),
-          Container(
-            width: double.infinity,
-            height: 100.0,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: categories.length,
-              itemBuilder: (_, i) => Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                child: CategoryContainer(
-                  categoryItem: categories[i],
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.center,
+              child: Text(
+                'Meditate',
+                style: TextStyle(
+                  fontFamily: fontFamily,
+                  fontSize: 28.0,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ),
-          ),
-          SizedBox(height: 25.0),
-          // daily
-          Daily(),
-          SizedBox(height: 15.0),
-          StaggeredGridView.count(
-            shrinkWrap: true,
-            mainAxisSpacing: 16,
-            crossAxisSpacing: 8,
-            crossAxisCount: 2,
-            children: List.generate(
-              cards.length,
-              (index) => CustomCard(customCardItem: cards[index]),
+            SizedBox(height: 15.0),
+            Container(
+              constraints: BoxConstraints(maxWidth: 350.0),
+              child: Text(
+                'we can learn how to recognize when our minds are doing their normal everyday acrobatics.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: fontFamily,
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w300,
+                  color: Color(0xFFA1A4B2),
+                ),
+              ),
             ),
-            staggeredTiles: _builderSize(),
-          ),
-        ],
+            SizedBox(height: 30.0),
+            CategoriesListItem(isSleepScreen: false),
+            SizedBox(height: 25.0),
+            // daily
+            Daily(),
+            SizedBox(height: 15.0),
+            StaggeredGridView.count(
+              shrinkWrap: true,
+              mainAxisSpacing: 16,
+              crossAxisSpacing: 8,
+              crossAxisCount: 2,
+              children: List.generate(
+                cards.length,
+                (index) => CustomCard(customCardItem: cards[index]),
+              ),
+              staggeredTiles: _builderSize(),
+            ),
+          ],
+        ),
       ),
     );
   }

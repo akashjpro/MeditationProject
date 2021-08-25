@@ -229,7 +229,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   CustomButton(
                     color: Color(0xFF8E97FD),
-                    function: () {},
+                    function: () {
+                      Navigator.popAndPushNamed(context, '/reminders');
+                    },
                     textColor: Color(0xFFF6F1FB),
                     title: 'GET STARTED',
                     iconPath: '',
