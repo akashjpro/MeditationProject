@@ -45,7 +45,9 @@ class RecommendCard extends StatelessWidget {
           ),
           SizedBox(height: 15.0),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/music');
+            },
             child: Text('START'),
             style: TextButton.styleFrom(
               primary: Color(0xFF3F414E),

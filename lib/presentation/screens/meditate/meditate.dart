@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:meditation_app/core/constants/constants.dart';
 import 'package:meditation_app/core/themes/theme.dart';

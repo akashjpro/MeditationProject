@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:meditation_app/presentation/screens/shared/widgets/custom_button.dart';
+import 'package:meditation_app/presentation/screens/shared/widgets/custom_navigate_button.dart';
 import 'package:meditation_app/presentation/screens/sign_up/widgets/text_field_container.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -51,23 +52,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: ClipOval(
-                        child: InkWell(
-                          onTap: () {
-                            print('tapped');
-                          },
-                          child: Container(
-                            alignment: Alignment.center,
-                            height: 55,
-                            width: 55,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(color: Color(0xFFEBEAEC))),
-                            child:
-                                SvgPicture.asset('assets/icons/back_arrow.svg'),
-                          ),
-                        ),
-                      ),
+                      child: CustomNavigateButton(
+                          iconPath: 'assets/icons/back_arrow.svg',
+                          color: Color(0xFFEBEAEC)),
                     ),
                   ),
                   Padding(

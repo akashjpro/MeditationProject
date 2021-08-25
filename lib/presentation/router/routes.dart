@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:meditation_app/core/exceptions/route_exception.dart';
 import 'package:meditation_app/presentation/screens/meditate/meditate.dart';
+import 'package:meditation_app/presentation/screens/music/music.dart';
 import 'package:meditation_app/presentation/screens/reminders/reminders_screen.dart';
 import 'package:meditation_app/presentation/screens/sign_up/sign_up_screen.dart';
 
@@ -12,7 +13,7 @@ class AppRouter {
   static const String signUp = '/';
   static const String reminders = '/reminders';
   static const String meditation = '/meditate';
-
+  static const String music = '/music';
   const AppRouter._();
 
   static Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
@@ -23,6 +24,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => RemindersScreen());
       case meditation:
         return MaterialPageRoute(builder: (_) => MeditateScreen());
+      case music:
+        return MaterialPageRoute(builder: (_) => MusicScreen());
       default:
         throw const RouteException('Route not found!');
     }
