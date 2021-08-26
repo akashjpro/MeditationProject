@@ -16,7 +16,7 @@ class DailyThought extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           color: color3,
           image: DecorationImage(
-              image: AssetImage('images/imgH3.png'), fit: BoxFit.fill)),
+              image: AssetImage(img_bg_daily), fit: BoxFit.fill)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -70,7 +70,7 @@ class DailyThought extends StatelessWidget {
           ),
           Container(
             child: IconButton(
-              icon: SvgPicture.asset('images/iconPlay.svg',height: 40,width: 40,fit: BoxFit.fill,),
+              icon: SvgPicture.asset(icon_play,height: 40,width: 40,fit: BoxFit.fill,),
               onPressed: () {},
             ),
           )

@@ -11,8 +11,6 @@ class Welcome extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        height: size.height,
-        width: size.width,
         color: Color(0xff8E97FD),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -71,7 +69,7 @@ class Welcome extends StatelessWidget {
       padding: EdgeInsets.only(top: 50),
       alignment: Alignment.center,
       child: SvgPicture.asset(
-        'images/logo1.svg',
+        logo1,
         fit: BoxFit.fill,
         height: 30,
         width: 168,

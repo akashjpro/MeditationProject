@@ -64,7 +64,7 @@ class _BodyState extends State<Body> {
                             child: IconButton(
                                 onPressed: () {},
                                 icon: SvgPicture.asset(
-                                  'images/svg/iconP15.svg',
+                                  icon_go_back_15s,
                                   height: 39,
                                   width: 39,
                                   fit: BoxFit.fill,
@@ -79,7 +79,7 @@ class _BodyState extends State<Body> {
                             child: IconButton(
                                 onPressed: () {},
                                 icon: SvgPicture.asset(
-                                  'images/svg/iconBtnPause.svg',
+                                  icon_btn_pause,
                                   height: 109,
                                   width: 109,
                                   fit: BoxFit.fill,
@@ -94,7 +94,7 @@ class _BodyState extends State<Body> {
                             child: IconButton(
                                 onPressed: () {},
                                 icon: SvgPicture.asset(
-                                  'images/svg/iconN15.svg',
+                                  icon_go_next_15s,
                                   height: 39,
                                   width: 39,
                                   fit: BoxFit.fill,

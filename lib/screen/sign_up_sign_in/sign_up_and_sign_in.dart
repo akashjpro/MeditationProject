@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:meditation_app/constants.dart';
 
 class SignUpAndSignIn extends StatelessWidget {
   @override
@@ -15,7 +16,7 @@ class SignUpAndSignIn extends StatelessWidget {
             Padding(padding: EdgeInsets.only(top: size.height * 0.03348214)),
             _text(context, size),
             Padding(padding: EdgeInsets.only(top: size.height * 0.06919642)),
-            _signUp(context,size)
+            _signUp(context, size)
           ],
         ),
       ),
@@ -27,7 +28,7 @@ class SignUpAndSignIn extends StatelessWidget {
       height: size.height * 0.56,
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('images/frame.png'), fit: BoxFit.fitWidth)),
+              image: AssetImage(img_bg_sign), fit: BoxFit.fitWidth)),
       child: Column(
         children: [
           _logo(context, size),
@@ -45,9 +46,7 @@ class SignUpAndSignIn extends StatelessWidget {
       alignment: Alignment.center,
       padding: EdgeInsets.only(top: 51),
       child: SvgPicture.asset(
-        'images/logo0.svg',
-        // fit: BoxFit.fill,
-        // color: Colors.green,
+        logo,
         height: size.height * 0.03348214,
         width: size.width * 0.4492753623,
       ),
@@ -62,7 +61,7 @@ class SignUpAndSignIn extends StatelessWidget {
             left: size.width * 0.098285, right: size.width * 0.098285),
         alignment: Alignment.center,
         child:
-            Image(image: AssetImage('images/imgimage1.png'), fit: BoxFit.fill));
+            Image(image: AssetImage(img_frame_sign), fit: BoxFit.fill));
   }
 
   Widget _text(BuildContext context, Size size) {
@@ -161,4 +160,3 @@ class SignUpAndSignIn extends StatelessWidget {
     ),
   );
 }
-

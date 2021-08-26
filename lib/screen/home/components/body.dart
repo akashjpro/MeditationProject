@@ -14,9 +14,9 @@ class Body extends StatelessWidget {
 
       final List<ItemHome> listItemHome = [
 
-    ItemHome('images/imgTest1.png', 'Focus', 'MEDITATION', '3-10 MIN'),
-    ItemHome('images/imgTest2.png', 'Happiness', 'MEDITATION', '3-10 MIN'),
-    ItemHome('images/imgTest1.png', 'Focus', 'MEDITATION', '3-10 MIN')
+    ItemHome(img_item1, 'Focus', 'MEDITATION', '3-10 MIN'),
+    ItemHome(img_item2, 'Happiness', 'MEDITATION', '3-10 MIN'),
+    ItemHome(img_item1, 'Focus', 'MEDITATION', '3-10 MIN')
   ];
 
   @override
@@ -84,7 +84,7 @@ class Body extends StatelessWidget {
             colorText: color4,
             colorBn: color4,
             colorTextBn: colorText1,
-            linkImg: 'images/imgH1x1.png',
+            linkImg: img_h1,
             size: size,
           ),
           Combo1(
@@ -95,7 +95,7 @@ class Body extends StatelessWidget {
             colorText: color5,
             colorBn: color5,
             colorTextBn: color4,
-            linkImg: 'images/imgH2x1.png',
+            linkImg: img_h2,
             size: size,
           )
         ],
