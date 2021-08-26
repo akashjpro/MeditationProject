@@ -23,8 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
+  flutter_svg: ^0.22.0
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -45,9 +44,55 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - images/logo0.svg
+    - images/logo.svg
+    - images/logo1.svg
+    - images/Vector.svg
+    - images/imagepeople.svg
+    - images/iconPlay.svg
+    - images/frame.png
+    - images/cham.svg
+    - images/iconPlay.svg
+ 
+    # ===========
+    # Appbar
+    - images/svg/icon-x.svg
+    - images/svg/icon-back.svg
+    - images/svg/icon-dowload.svg
+    - images/svg/icon-heart-outline.svg
+    # Home Screen
+    - images/img/img-bg-home.png
+    - images/img/img-bg-home1.png
+    # ==========
+    # music
+    - images/svg/iconBtnPause.svg
+    - images/svg/iconN15.svg
+    - images/svg/iconP15.svg
+    # ===========
+    # Play option
+    - images/svg/icon-earphone.svg
+    - images/svg/icon-heart.svg
+    - images/img/imgBG-play-option.png
+    - images/svg/vector-line.svg
+    - images/img/img1.png
+    - images/img/img2.png
+    # ============
+    # NavBottom
+    - images/svg/icon-music.svg
+    - images/svg/icon-home.svg
+    - images/svg/icon-sleep.svg
+    - images/svg/icon-meditate.svg
+    - images/svg/icon-afsar.svg
+    # ===========
+    - images/imgimage1.png
+    - images/imgH3.png
+    - images/imgH1x1.png
+    - images/imgH2x1.png
+    - images/imgTest1.png
+    - images/imgTest2.png
+ 
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
