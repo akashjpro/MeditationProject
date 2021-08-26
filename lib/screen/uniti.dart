@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../constants.dart';
+
 
 
 
@@ -13,7 +15,7 @@ class Logo extends StatelessWidget {
       alignment: Alignment.center,
       padding: EdgeInsets.only(top: 50),
       child: SvgPicture.asset(
-        'images/logo.svg',
+        logo,
         fit: BoxFit.fill,
         height: 30,
         width: 168,

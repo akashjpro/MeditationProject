@@ -28,7 +28,7 @@ class SignUpAndSignIn extends StatelessWidget {
       height: size.height * 0.56,
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(img_bg_sign), fit: BoxFit.fitWidth)),
+              image: AssetImage(img_bg_sign), fit: BoxFit.fill)),
       child: Column(
         children: [
           _logo(context, size),

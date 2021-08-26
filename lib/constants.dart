@@ -48,7 +48,7 @@ const String icon_afsar = "images/svg/icon-afsar.svg";
  const String img_frame_sign = "images/img/imgimage1.png";
 
  // Home screen
-const String icon_play = "images/img/iconPlay.svg";
+const String icon_play = "images/svg/iconPlay.svg";
 const String img_h1 ="images/img/imgH1x1.png";
 const String img_h2 ="images/img/imgH2x1.png";
 const String img_bg_daily ="images/img/imgH3.png";
